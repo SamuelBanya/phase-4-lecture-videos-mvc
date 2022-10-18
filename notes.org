@@ -1,0 +1,30 @@
+* Related Notes
+<2022-10-17 Mon 19:45>: I ran this command to mimic what was already present in the beginning of the video, and nuked the default '.git' folder within the 'pet-shop' directory itself to avoid duplicative git repos:
+#+begin_src bash
+samuelbanya@Samuels-MBP ~/hub/Development/code/phase-4/phase-4-lecture-videos-mvc $ rails new pet-shop --skip--javascript
+#+end_src
+
+Notes On "Models":
+- In this scenario, we use the 'models' to utilize Active Record methods to communicate with our database to perform any functions on the data, which include CRUD (Create Read Update Delete) actions. These models also handle validation as well.
+- Models identify the relationships of each SQL table in the database.
+- Every model should be 'singular' in name, and end in a '.rb' file extension to indicate that they are Ruby classes
+
+Notes On "Controllers"
+- "Controllers" exist as the middleman between the 'data' and the 'presentation' portions of the application.
+- It is responsible for determining how specific request are handled
+- It will communicate to retrieve data and present it to the 'View' of the application
+- We can store data within instance '@variablename' variables so that we can pass the data to the 'View' portion of the application
+- Every controller should be 'plural' in name + 'Controller'
+- ex: "pets_controller.rb":
+#+begin_src ruby
+class PetsController
+end
+#+end_src
+- Each controller will implicitly render its specific view
+- The view files MUST match the actions that they are associated with
+- This prevents having to EXPLICITLY render the views
+
+Notes On "Views"
+- These files should not contain any complex code
+- This should contain .erb: embedded ruby
+- This allows for the syntax of HTML + Ruby to provide a strong dynamic webpage experience (NOTE: Kind of similar to 'Angular' in a way)
